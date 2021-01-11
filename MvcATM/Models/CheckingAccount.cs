@@ -19,6 +19,8 @@ namespace MvcATM.Models
 
         [Required]
         [Display(Name = "First Name: ")]
+        [StringLength(255, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [RegularExpression("^[ a-zA-Z ]*$", ErrorMessage = "First name can not contain number or symbols")] //can only handle common alphabet the regex \L or \w would work 
         public string FirstName { get; set; }
 
         [Required]
